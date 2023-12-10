@@ -1,0 +1,11 @@
+{
+  "name": "data-vis-topic-extractor",
+  "version": "1.0.0",
+  "description": "Serverless functions to extract and rate data vis topics shared online",
+  "keywords": [],
+  "author": "Rob Sutcliffe",
+  "license": "ISC",
+  "devDependencies": {
+    "serverless-python-requirements": "^5.4.0"
+  }
+}

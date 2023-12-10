@@ -1,11 +1,26 @@
-service: aws-python # NOTE: update this with your service name
-
-frameworkVersion: '3'
+service: basic-serverless-lambda-python
 
 provider:
   name: aws
-  runtime: python3.9
+  runtime: python3.11
+  stage: dev
+  region: eu-west-2
+
+plugins:
+  - serverless-python-requirements
+
+package:
+  individually: true
 
 functions:
-  hello:
-    handler: handler.hello
+  scraper:
+    name: dataVisTopicScraper
+    handler: scraper.handler
+    description: scrape data vis topics
+    timeout: 5 # seconds
+    memorySize: 128 # mb
+    package:
+      patterns:
+        - "!node_modules/**"
+        - "!package-lock.json"
+        - "!package.json"
